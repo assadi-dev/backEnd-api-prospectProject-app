@@ -18,18 +18,19 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
  * @ApiResource(
- *  security="is_granted('IS_AUTHENTICATED_FULLY')",
+ *  
  *      
  *   itemOperations ={
- *          "get" = {"openapi_context" ={"security"={{"bearerAuth"={}}}  }},
- *          "put"={"openapi_context" ={"security"={{"bearerAuth"={}}}  }},
- *          "delete"={"openapi_context" ={"security"={{"bearerAuth"={}}}  }},
+ *          "get" = {security="is_granted('IS_AUTHENTICATED_FULLY')","openapi_context" ={"security"={{"bearerAuth"={}}}  }},
+ *          "put"={security="is_granted('IS_AUTHENTICATED_FULLY')","openapi_context" ={"security"={{"bearerAuth"={}}}  }},
+ *          "delete"={security="is_granted('IS_AUTHENTICATED_FULLY')","openapi_context" ={"security"={{"bearerAuth"={}}}  }},
  * 
  *     },
  *    collectionOperations={
- *       "get" = {"openapi_context" ={"security"={{"bearerAuth"={}}}  }},
+ *       "get" = {security="is_granted('IS_AUTHENTICATED_FULLY')","openapi_context" ={"security"={{"bearerAuth"={}}}  }},
  *     "post",
  *      "owner"={
+ *          security="is_granted('IS_AUTHENTICATED_FULLY')",
  *          "pagination_enabled"= false,
  *          "path"="/owner",
  *          "method"="get",
