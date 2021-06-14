@@ -21,16 +21,16 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
  *  
  *      
  *   itemOperations ={
- *          "get" = {security="is_granted('IS_AUTHENTICATED_FULLY')","openapi_context" ={"security"={{"bearerAuth"={}}}  }},
- *          "put"={security="is_granted('IS_AUTHENTICATED_FULLY')","openapi_context" ={"security"={{"bearerAuth"={}}}  }},
- *          "delete"={security="is_granted('IS_AUTHENTICATED_FULLY')","openapi_context" ={"security"={{"bearerAuth"={}}}  }},
+ *          "get" = {"security"="is_granted('IS_AUTHENTICATED_FULLY')","openapi_context" ={"security"={{"bearerAuth"={}}}  }},
+ *          "put"={"security"="is_granted('IS_AUTHENTICATED_FULLY')","openapi_context" ={"security"={{"bearerAuth"={}}}  }},
+ *          "delete"={"security"="is_granted('IS_AUTHENTICATED_FULLY')","openapi_context" ={"security"={{"bearerAuth"={}}}  }},
  * 
  *     },
  *    collectionOperations={
- *       "get" = {security="is_granted('IS_AUTHENTICATED_FULLY')","openapi_context" ={"security"={{"bearerAuth"={}}}  }},
+ *       "get" = {"security"="is_granted('IS_AUTHENTICATED_FULLY')","openapi_context" ={"security"={{"bearerAuth"={}}}  }},
  *     "post",
  *      "owner"={
- *          security="is_granted('IS_AUTHENTICATED_FULLY')",
+ *          "security"="is_granted('IS_AUTHENTICATED_FULLY')",
  *          "pagination_enabled"= false,
  *          "path"="/owner",
  *          "method"="get",
